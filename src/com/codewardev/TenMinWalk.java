@@ -11,16 +11,16 @@ public class TenMinWalk {
 		
 		Stack<Character> stack = new Stack<Character>();
 		for(int i=0; i<walk.length; i++) {
-			if(walk[i] == 'n' && stack.indexOf('s') != -1) {
+			if(walk[i] == 'n' && stack.contains('s')) {
 				stack.remove(stack.indexOf('s'));
 			} else
-			if(walk[i] == 's' && stack.indexOf('n') != -1) {
+			if(walk[i] == 's' && stack.contains('n')) {
 				stack.remove(stack.indexOf('n'));
 			} else
-			if(walk[i] == 'w' && stack.indexOf('e') != -1) {
+			if(walk[i] == 'w' && stack.contains('e')) {
 				stack.remove(stack.indexOf('e'));
 			} else
-			if (walk[i] == 'e' && stack.indexOf('w') != -1) {
+			if (walk[i] == 'e' && stack.contains('w')) {
 				stack.remove(stack.indexOf('w'));
 			} else {
 				stack.push(walk[i]);
